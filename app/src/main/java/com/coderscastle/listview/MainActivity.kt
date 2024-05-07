@@ -1,7 +1,6 @@
 package com.coderscastle.listview
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,10 +18,26 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val data = listOf(
+            Users("Sam",25,"123"),
+            Users("Arif",21,"123556"),
+            Users("Asif",22,"123456"),
+            Users("Robert",23,"986556"),
+            Users("Arif",21,"123556"),
+            Users("Asif",22,"123456"),
+            Users("Chris",23,"986556"),
+            Users("Arif",21,"123556"),
+            Users("Asif",22,"123456"),
+            Users("Evans",23,"986556"),
+            Users("Arif",21,"123556"),
+            Users("Asif",22,"123456"),
+            Users("Natasha",23,"986556"),
+            Users("Arif",21,"123556"),
+            Users("Asif",22,"123456"),
+            Users("Scarlett",23,"986556"),
+        )
+        val adapter = Adapter(this,data)
         val listView = findViewById<ListView>(R.id.listView)
-
-        val array = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20")
-        val adapter = ArrayAdapter(this, R.layout.list_item_layout, array)
         listView.adapter = adapter
     }
 }
